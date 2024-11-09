@@ -1,9 +1,6 @@
 import path, { resolve as _resolve, join as _join } from "path";
 import { fileURLToPath } from "url";
-import typography from "@tailwindcss/typography";
-import forms from "@tailwindcss/forms";
-import aspectRatio from "@tailwindcss/aspect-ratio";
-import containerQueries from "@tailwindcss/container-queries";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -39,16 +36,18 @@ export default {
         ],
     },
     resolve: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".css"],
     },
-    externals:
-        // process.env.NODE_ENV === "development"
-        true
-            ? {}
-            : {
-                  react: "React",
-                  "react-dom": "ReactDOM",
-              },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: _join(__dirname, "src/index.html"),
+            title: "0Print",
+        }),
+    ],
+    // externals: {
+    //     react: "React",
+    //     "react-dom": "ReactDOM",
+    // },
     devServer: {
         static: {
             directory: _join(__dirname, "dist"),
