@@ -6,7 +6,7 @@ const Page = ({ children }) => {
     return (
         <>
             <form
-                className="form prose max-w-md mx-auto"
+                className="form prose max-w-md mx-auto border"
                 onSubmit={(e) => {
                     e.preventDefault();
                     console.log("submit");

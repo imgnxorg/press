@@ -41,15 +41,14 @@ export default {
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
     },
-    content: ["./src/**/*.{html,vue,js,ts,jsx,tsx}"],
-    theme: {
-        extend: {},
-    },
-    plugins: [typography, forms, aspectRatio, containerQueries],
-    // externals: {
-    //     react: "React",
-    //     "react-dom": "ReactDOM",
-    // },
+    externals:
+        // process.env.NODE_ENV === "development"
+        true
+            ? {}
+            : {
+                  react: "React",
+                  "react-dom": "ReactDOM",
+              },
     devServer: {
         static: {
             directory: _join(__dirname, "dist"),
