@@ -11,7 +11,7 @@ export default {
     output: {
         filename: "root.js",
         path: _resolve(__dirname, "dist"),
-        publicPath: "/public",
+        publicPath: "",
         library: "imgnx",
         libraryTarget: "umd",
         globalObject: "this",
@@ -44,10 +44,10 @@ export default {
             title: "0Print",
         }),
     ],
-    // externals: {
-    //     react: "React",
-    //     "react-dom": "ReactDOM",
-    // },
+    externals: {
+        react: "React",
+        "react-dom": "ReactDOM",
+    },
     devServer: {
         static: {
             directory: _join(__dirname, "dist"),

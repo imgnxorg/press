@@ -6,8 +6,8 @@
     "scripts": {
         "start": "webpack-dev-server --mode development",
         "serve": "webpack serve --config webpack.config.mjs --mode development",
-        "watch": "webpack --watch",
-        "build": "webpack --mode=production",
+        "watch": "webpack --mode production --watch",
+        "build": "webpack --mode production",
         "fetch": "cp -r ../0Scrape/dist/** ./src/ && tailwindcss -i ./src/**/**.css -o ./dist/output.css --minify"
     },
     "keywords": [],

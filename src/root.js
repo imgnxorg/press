@@ -1,12 +1,13 @@
 import React from "react";
 import "./globals.css";
+import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
 
 const Page = ({ children }) => {
     return (
         <>
             <form
-                className="form prose max-w-md mx-auto border"
+                className="form prose mx-auto border p-4 rounded shadow"
                 onSubmit={(e) => {
                     e.preventDefault();
                     console.log("submit");
@@ -29,7 +30,7 @@ const Page = ({ children }) => {
 const root = createRoot(document.getElementById("root"));
 
 root.render(
-    <React.StrictMode>
+    <>
         <Page />
-    </React.StrictMode>
+    </>
 );
