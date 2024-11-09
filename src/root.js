@@ -1,6 +1,5 @@
 import React from "react";
 import "./globals.css";
-import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
 
 const Page = ({ children }) => {
@@ -27,10 +26,7 @@ const Page = ({ children }) => {
     );
 };
 
-const root = createRoot(document.getElementById("root"));
+const container = document.getElementById("root");
+const root = createRoot(container);
 
-root.render(
-    <>
-        <Page />
-    </>
-);
+root.render(<Page />);

@@ -1,16 +1,21 @@
-import path, { resolve as _resolve, join as _join } from "path";
+import path, { resolve, join } from "path";
 import { fileURLToPath } from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-/** @type {import('tailwindcss').Config} */
 export default {
-    entry: "./src/root.js",
+    entry: {
+        cdn: [
+            "./modules/react/umd/react.production.min.js",
+            "./modules/react-dom/umd/react-dom.production.min.js",
+        ],
+        root: "./src/root.js",
+    },
     output: {
-        filename: "root.js",
-        path: _resolve(__dirname, "dist"),
+        filename: "[name].js",
+        path: resolve(__dirname, "dist"),
         publicPath: "",
         library: "imgnx",
         libraryTarget: "umd",
@@ -35,22 +40,22 @@ export default {
             },
         ],
     },
+    externals: {
+        react: "React",
+        "react-dom": "ReactDOM",
+    },
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx", ".css"],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: _join(__dirname, "src/index.html"),
+            template: join(__dirname, "src/index.html"),
             title: "0Print",
         }),
     ],
-    externals: {
-        react: "React",
-        "react-dom": "ReactDOM",
-    },
     devServer: {
         static: {
-            directory: _join(__dirname, "dist"),
+            directory: join(__dirname, "dist"),
         },
         compress: true, // Enable gzip compression for everything served
         port: 3000, // Port to run the dev server on
