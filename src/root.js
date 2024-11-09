@@ -28,4 +28,8 @@ const Page = ({ children }) => {
 
 const root = createRoot(document.getElementById("root"));
 
-root.render(<Page />);
+root.render(
+    <React.StrictMode>
+        <Page />
+    </React.StrictMode>
+);
