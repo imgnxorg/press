@@ -1,3 +1,85 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-ubuntu {
+    font-family: "Ubuntu Sans", sans-serif;
+    /* font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100; */
+}
+
+.font-ubuntu-display {
+    font-family: "Ubuntu Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-sans;
+}
+
+.debug {
+    outline: 1px solid greenyellow;
+    /* background-color: rgba(0, 255, 0, 0.1); */
+}
+
+.debug *:nth-child(odd) {
+    outline: 1px solid red;
+    /* background-color: rgba(255, 0, 0, 0.1); */
+}
+
+.debug *:nth-child(even) {
+    outline: 1px solid blue;
+    /* background-color: rgba(0, 0, 255, 0.1); */
+}
+
+input[type="range"] {
+    @apply appearance-none bg-transparent w-full h-0 focus:ring-0 focus:outline-none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+    @apply appearance-none bg-transparent w-full h-0;
+}
+input[type="range"]:not(.touched)::-webkit-slider-thumb::after {
+    content: "";
+    /* @apply !bg-white !animate-ping w-full h-10 z-10; */
+}
+input[type="range"]::-webkit-slider-thumb {
+    @apply bg-blue-500 appearance-none rounded-full cursor-grab active:cursor-grabbing relative top-0.5 z-10 h-5 w-5 ring ring-sky-100 ring-opacity-50 group-focus-within:ring-4 group-focus-within:ring-opacity-100 group-focus-within:ring-sky-200;
+
+    background-image: radial-gradient(
+            circle at 33% 33%,
+            #f8f8f880 0%,
+            transparent 50%,
+            transparent 100%
+        ),
+        radial-gradient(
+            ellipse at 133% 133%,
+            #08080880 0%,
+            transparent 50%,
+            transparent 100%
+        ) !important;
+}
+
+.unselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.border-inset {
+    border-style: inset;
+}
+
+.border-outset {
+    border-style: outset;
+}

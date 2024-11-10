@@ -4,7 +4,8 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "webpack-dev-server --mode development",
+        "start": "webpack-dev-server --mode production",
+        "dev": "webpack-dev-server --mode development",
         "serve": "webpack serve --config webpack.config.mjs --mode development",
         "watch": "webpack --mode production --watch",
         "watch:dev": "webpack --mode development --watch",
@@ -23,6 +24,7 @@
         "@tailwindcss/container-queries": "^0.1.1",
         "@tailwindcss/forms": "^0.5.9",
         "@tailwindcss/typography": "^0.5.15",
+        "@webpack-cli/serve": "^2.0.5",
         "autoprefixer": "^10.4.20",
         "babel-loader": "^9.2.1",
         "cross-env": "^7.0.3",
@@ -30,13 +32,19 @@
         "html-webpack-plugin": "^5.6.3",
         "postcss": "^8.4.47",
         "postcss-loader": "^8.1.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "style-loader": "^4.0.0",
         "tailwindcss": "^3.4.14",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.6.3",
         "webpack": "^5.96.1",
         "webpack-cli": "^5.1.4",
         "webpack-dev-server": "^5.1.0",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
         "yargs": "^17.7.2"
+    },
+    "dependencies": {
+        "@adobe/react-spectrum": "^3.37.1",
+        "formik": "^2.4.6"
     }
 }
