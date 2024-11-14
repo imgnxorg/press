@@ -1,2 +1,4 @@
 dist/
-
+src/**
+!src/_template
+!src/imgn_modules/fetch-with-progress
