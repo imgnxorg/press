@@ -4,22 +4,26 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "webpack-dev-server --mode production",
-        "dev": "webpack-dev-server --mode development",
-        "serve": "webpack serve --config webpack.config.mjs --mode development",
-        "watch": "webpack --mode production --watch",
-        "watch:dev": "webpack --mode development --watch",
-        "build": "webpack --mode production",
-        "build:dev": "webpack --mode development",
-        "fetch": "cp -r ../0Scrape/dist/** ./src/ && tailwindcss -i ./src/**/**.css -o ./dist/output.css --minify"
+        "init": "cd src && mkdir $WEBSITE && cd ../ && cp ./*.js ./*.html ./*.css src/$WEBSITE",
+        "start": "NODE_ENV=production webpack-dev-server --mode production --port 8400",
+        "dev": "NODE_ENV=development webpack-dev-server --mode development --port 3030",
+        "serve": "NODE_ENV=production webpack serve --config webpack.config.mjs --mode production",
+        "serve:dev": "NODE_ENV=development webpack serve --config webpack.config.mjs --mode development",
+        "watch": "NODE_ENV=production webpack --mode production --watch",
+        "watch:dev": "NODE_ENV=development webpack --mode development --watch",
+        "build": "NODE_ENV=production webpack --mode production",
+        "build:dev": "NODE_ENV=development webpack --mode development",
+        "fetch": "cp -r @/0Scrape/dist/** ./src/ && tailwindcss -i ./src/**/**.css -o ./dist/output.css --minify"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "description": "",
-    "devDependencies": {
+    "dependencies": {
+        "@adobe/react-spectrum": "^3.37.1",
         "@babel/core": "^7.26.0",
         "@babel/preset-react": "^7.25.9",
+        "@babel/runtime": "^7.26.0",
         "@tailwindcss/aspect-ratio": "^0.4.2",
         "@tailwindcss/container-queries": "^0.1.1",
         "@tailwindcss/forms": "^0.5.9",
@@ -29,11 +33,10 @@
         "babel-loader": "^9.2.1",
         "cross-env": "^7.0.3",
         "css-loader": "^7.1.2",
+        "formik": "^2.4.6",
         "html-webpack-plugin": "^5.6.3",
         "postcss": "^8.4.47",
         "postcss-loader": "^8.1.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
         "style-loader": "^4.0.0",
         "tailwindcss": "^3.4.14",
         "ts-loader": "^9.5.1",
@@ -43,8 +46,5 @@
         "webpack-dev-server": "^5.1.0",
         "yargs": "^17.7.2"
     },
-    "dependencies": {
-        "@adobe/react-spectrum": "^3.37.1",
-        "formik": "^2.4.6"
-    }
+    "packageManager": "yarn@4.5.1"
 }

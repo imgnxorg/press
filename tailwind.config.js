@@ -5,7 +5,7 @@ import containerQueries from "@tailwindcss/container-queries";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: ["./src/**/*.{html,vue,js,ts,jsx,tsx,css}"],
+    content: ["./src/*.*/*.{html,vue,js,ts,mjs,mts,jsx,tsx,css}"],
     theme: {
         extend: {},
     },
