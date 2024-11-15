@@ -1,7 +1,7 @@
 import "./globals.css";
 import React from "react";
-import ReactDOM from "react-dom";
-import Page from "./page.js";
+import ReactDOM from "react-dom/client";
+import Page from "./page";
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);

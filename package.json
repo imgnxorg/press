@@ -4,15 +4,16 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "init": "cd src && mkdir $WEBSITE && cd ../ && cp ./*.js ./*.html ./*.css src/$WEBSITE",
-        "start": "NODE_ENV=production webpack-dev-server --mode production --port 8400",
-        "dev": "NODE_ENV=development webpack-dev-server --mode development --port 3030",
-        "serve": "NODE_ENV=production webpack serve --config webpack.config.mjs --mode production",
-        "serve:dev": "NODE_ENV=development webpack serve --config webpack.config.mjs --mode development",
-        "watch": "NODE_ENV=production webpack --mode production --watch",
-        "watch:dev": "NODE_ENV=development webpack --mode development --watch",
-        "build": "NODE_ENV=production webpack --mode production",
-        "build:dev": "NODE_ENV=development webpack --mode development",
+        "react-devtools": "react-devtools",
+        "init": "shx cp -r src/*.{js,html,css} \"src/$WEBSITE/{$1}\"",
+        "start": "webpack-dev-server --mode production --port 8400",
+        "dev": "webpack-dev-server --mode development --port 3030",
+        "serve": "webpack serve --config webpack.config.mjs --mode production",
+        "serve:dev": "webpack serve --config webpack.config.mjs --mode development",
+        "watch": "webpack --mode production --watch",
+        "watch:dev": "webpack --mode development --watch",
+        "build": "webpack --mode production",
+        "build:dev": "webpack --mode development",
         "fetch": "cp -r @/0Scrape/dist/** ./src/ && tailwindcss -i ./src/**/**.css -o ./dist/output.css --minify"
     },
     "keywords": [],
@@ -24,6 +25,7 @@
         "@babel/core": "^7.26.0",
         "@babel/preset-react": "^7.25.9",
         "@babel/runtime": "^7.26.0",
+        "@spectrum-icons/workflow": "^4.2.15",
         "@tailwindcss/aspect-ratio": "^0.4.2",
         "@tailwindcss/container-queries": "^0.1.1",
         "@tailwindcss/forms": "^0.5.9",
@@ -37,6 +39,8 @@
         "html-webpack-plugin": "^5.6.3",
         "postcss": "^8.4.47",
         "postcss-loader": "^8.1.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "style-loader": "^4.0.0",
         "tailwindcss": "^3.4.14",
         "ts-loader": "^9.5.1",
@@ -46,5 +50,10 @@
         "webpack-dev-server": "^5.1.0",
         "yargs": "^17.7.2"
     },
-    "packageManager": "yarn@4.5.1"
+    "packageManager": "yarn@4.5.1",
+    "devDependencies": {
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "react-devtools": "^6.0.1"
+    }
 }

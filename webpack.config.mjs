@@ -5,24 +5,35 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-console.log("args:", process.argv);
+console.log("Args:", process.argv);
+console.log("Env:", process.env);
+
 const args = process.argv;
-args.map((arg) => {
+args.forEach((arg) => {
     if (arg.includes("WEBSITE")) {
         process.env.WEBSITE = arg.split("=")[1];
     }
     if (arg.includes("NODE_ENV")) {
         process.env.NODE_ENV = arg.split("=")[1];
     }
+    // Temporary fix...
+    if (arg.includes("production")) {
+        process.env.NODE_ENV = "production";
+    }
+    // Temporary fix...
+    if (arg.includes("development")) {
+        process.env.NODE_ENV = "development";
+    }
+    // Temporary fix...
 });
 
 const webpack = {
     entry: {
         // cdn: [
-        //     "src/imgn_modules/react/umd/react.production.min.js",
-        //     "src/imgn_modules/react-dom/umd/react-dom.production.min.js",
+        //     "/imgn_modules/react/umd/react.production.min.js",
+        //     "/imgn_modules/react-dom/umd/react-dom.production.min.js",
         // ],
-        root: join(__dirname, `src/${process.env.WEBSITE}/root.js`),
+        root: join(__dirname, `src/${process.env.WEBSITE}/root.tsx`),
     },
     output: {
         filename: "[name].js",
@@ -59,6 +70,7 @@ const webpack = {
     externals: {
         react: "React",
         "react-dom": "ReactDOM",
+        "fetch-with-progress": "FetchWithProgress",
 
         lodash: {
             commonjs: "lodash",
@@ -91,5 +103,5 @@ const webpack = {
     },
 };
 
-console.log("webpack:", JSON.stringify(webpack, null, 2));
+// console.log("webpack:", JSON.stringify(webpack, null, 2));
 export default webpack;
