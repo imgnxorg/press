@@ -1,4 +1,10 @@
-dist/
+dist/**
+!dist/.gitkeep
 src/**
-!src/_template
-!src/imgn_modules/fetch-with-progress
+!src/.gitkeep
+imgn_modules
+!imgn_modules/fetch-with-progress
+node_modules
+loader.mjs
+install-state.gz
+_papers/**
