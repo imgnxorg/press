@@ -7,6 +7,36 @@
         "jsx": "react",
         "allowJs": true,
         "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "typeRoots": ["./node_modules/@types"],
+        "types": [
+            "body-parser",
+            "bonjour",
+            "connect",
+            "connect-history-api-fallback",
+            "eslint",
+            "eslint-scope",
+            "estree",
+            "express",
+            "express-serve-static-core",
+            "hoist-non-react-statics",
+            "html-minifier-terser",
+            "http-errors",
+            "http-proxy",
+            "json-schema",
+            "mime",
+            "node",
+            "node-forge",
+            "prop-types",
+            "qs",
+            "range-parser",
+            "react",
+            "retry",
+            "send",
+            "serve-index",
+            "serve-static",
+            "sockjs",
+            "ws"
+        ]
     }
 }

@@ -7,4 +7,4 @@ imgn_modules
 node_modules
 loader.mjs
 install-state.gz
-_papers/**
+_papers
