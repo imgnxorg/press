@@ -10,6 +10,7 @@
         "allowSyntheticDefaultImports": true,
         "typeRoots": ["./node_modules/@types"],
         "types": [
+            "imgnx",
             "body-parser",
             "bonjour",
             "connect",
@@ -39,5 +40,6 @@
             "sockjs",
             "ws"
         ]
-    }
+    },
+    "include": ["./imgnx.d.ts"]
 }
