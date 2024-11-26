@@ -9,7 +9,7 @@ import chalk from "chalk";
 import rl from "readline-sync";
 import { fileURLToPath } from "url";
 import { promisify } from "util";
-import { getConfig, setConfig } from "./imgn_modules/config/index.js";
+import { getConfig, setConfig } from "./imgnx_modules/imgnx/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -102,7 +102,7 @@ try {
         console.log(chalk.green("Flags and options:"), flags);
         console.log(chalk.green("Reading configuration..."));
 
-        // Get the configuration from imgnx.json.
+        // Get the configuration from imgnx.config.json.
         let { WEBSITE } = process.env,
             config = await getConfig(),
             website = config.website || WEBSITE;
@@ -118,7 +118,7 @@ try {
         // If the website variable is not set, prompt the user for it.
         if (!WEBSITE && !config.website) {
             website = await promptUserForWebsite();
-            // Write the website to imgnx.json.
+            // Write the website to imgnx.config.json.
             config = { ...config, website };
             // Not immutable, I know, but this is the CLI...
             setConfig(config);

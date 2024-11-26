@@ -4,8 +4,11 @@ import aspectRatio from "@tailwindcss/aspect-ratio";
 import containerQueries from "@tailwindcss/container-queries";
 
 /** @type {import('tailwindcss').Config} */
-export default {
-    content: ["./src/**/*.{html,vue,js,ts,mjs,mts,jsx,tsx,css}"],
+module.exports = {
+    content: [
+        "./src/**/**.{js,jsx,ts,tsx}", // Adjust paths as needed
+        "./public/index.html",
+    ],
     theme: {
         extend: {
             colors: {
