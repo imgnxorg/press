@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "ESNext",
+        "jsx": "react",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "typeRoots": ["./node_modules/@types"],
+        "types": [
+            "body-parser",
+            "bonjour",
+            "connect",
+            "connect-history-api-fallback",
+            "eslint",
+            "eslint-scope",
+            "estree",
+            "express",
+            "express-serve-static-core",
+            "hoist-non-react-statics",
+            "html-minifier-terser",
+            "http-errors",
+            "http-proxy",
+            "json-schema",
+            "node",
+            "node-forge",
+            "prop-types",
+            "qs",
+            "range-parser",
+            "react",
+            "react-dom",
+            "retry",
+            "send",
+            "serve-index",
+            "serve-static",
+            "sockjs",
+            "ws"
+        ]
+    },
+    "include": ["./imgnx.d.ts"]
+}

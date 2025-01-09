@@ -1,0 +1,5 @@
+{
+    "website": "bluekeyit.com",
+    "include": ["react", "react-dom", "tailwindcss"],
+    "exclude": []
+}
