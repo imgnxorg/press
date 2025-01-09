@@ -69,8 +69,14 @@ const webpack = {
     ],
     entry: {
         /**
+<<<<<<< HEAD
          * eg.
          * reactFromCdn: join(__dirname, "src/cdn/react.js"),
+=======
+         * You can also set externals here...
+         * eg.
+         * cdn: join(__dirname, "src/cdn/react.js"),
+>>>>>>> d53b6d3fe6d7a817a2f4c8a64c3d9aae12772e13
          */
         root: join(__dirname, `src/websites/${WEBSITE}/root.tsx`),
     },

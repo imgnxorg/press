@@ -5,6 +5,9 @@ imgnx_modules
 node_modules
 _papers
 _docs
+.yarn
+.next
+*.zip
 
 WSL
 WSL**

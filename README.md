@@ -1,4 +1,4 @@
-# imgNXpress
+# @imgnx/press
 
 Tailwind CSS "Printing Press" for Static Modules.
 

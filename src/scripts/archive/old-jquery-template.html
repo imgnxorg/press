@@ -1,0 +1,51 @@
+<div id="root"></div>
+<!-- Start of Core.js -->
+<script id="imgnx-core">
+    console.log("Custom script loaded");
+    Array.from(document.querySelectorAll(".imgnx-js")).map((el) => {
+        el.onLoad = (e) => {
+            console.log(e.target, "loaded");
+        };
+    });
+    const imgnx = () => {
+        console.log("jQuery initialized.", $);
+        if (!$) {
+            const $ = jQuery;
+        }
+        const imgnx = $;
+        $(document).ready(function () {
+            console.log("Document is ready.");
+        });
+    };
+</script>
+<!-- End of Core.js -->
+<!-- Start of Dependencies -->
+<script
+    class="imgnx-js"
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+    onload="const $ = jQuery; imgnx();"
+></script>
+<script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    crossorigin
+></script>
+<script
+    src="https://www.unpkg.com/react@18/umd/react.production.min.js"
+    crossorigin
+></script>
+
+<!-- End of Dependencies -->
+<!-- Start of Error Checking -->
+<script>
+    const core = document.getElementById("imgnx-core");
+    if (!core) {
+        console.error(
+            "Imgnx core JS failed to load. This page will not render correctly."
+        );
+    } else {
+        console.log("✅ Assertion: IMGNX core JS");
+    }
+</script>
+<!-- End of Error Checking -->

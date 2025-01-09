@@ -10,6 +10,10 @@
         "allowSyntheticDefaultImports": true,
         "typeRoots": ["./node_modules/@types"],
         "types": [
+<<<<<<< HEAD
+=======
+            "imgnx",
+>>>>>>> d53b6d3fe6d7a817a2f4c8a64c3d9aae12772e13
             "body-parser",
             "bonjour",
             "connect",
@@ -24,6 +28,10 @@
             "http-errors",
             "http-proxy",
             "json-schema",
+<<<<<<< HEAD
+=======
+            "mime",
+>>>>>>> d53b6d3fe6d7a817a2f4c8a64c3d9aae12772e13
             "node",
             "node-forge",
             "prop-types",
